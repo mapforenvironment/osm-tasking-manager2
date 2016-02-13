@@ -9,7 +9,7 @@
 ### Major Release
 
 - [ ] create a branch
-- [ ] Draft a new release https://github.com/hotosm/osm-tasking-manager2/releases/new
+- [ ] Draft a new release https://github.com/mapforenvironment/osm-tasking-manager2/releases/new
 - [ ] Update CHANGELOG.md
 - [ ] Update version number in setup.py
 - [ ] git ci -m "Bumping version A.B.C"

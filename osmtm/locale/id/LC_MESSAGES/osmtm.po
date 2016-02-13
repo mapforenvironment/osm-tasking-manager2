@@ -28,7 +28,7 @@ msgstr "Tentang Tasking Manager"
 
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
-"OSM Tasking Manager is a mapping tool designed and built for the "
+"Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
 "Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
@@ -36,7 +36,7 @@ msgid ""
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "OSM Tasking Manager adalah alat pemetaan yang didesain dan dibuat Humanitarian OSM Team untuk pemetaan bersama. Tujuan dari alat ini adalah untuk membagi pekerjaan pemetaan menjadi beberapa area kecil yang bisa dikerjakan secara cepat. Ini menunjukkan area mana yang butuh dipetakan dan area mana yang butuh divalidasi. <br />Pendekatan ini memfasilitasi distribusi pekerjaan ke berbagai pemeta dalam konteks kebencanaan. Alat ini juga memungkinkan untuk mengatur proses dan kesamaan dari hasil pekerjaan yang dikerjakan (contoh elemen apa saja yang dipetakan, tag spesifik yang digunakan, dll)."
+msgstr "Map for Environment - OSM Tasking Manager adalah alat pemetaan yang didesain dan dibuat Humanitarian OSM Team untuk pemetaan bersama. Tujuan dari alat ini adalah untuk membagi pekerjaan pemetaan menjadi beberapa area kecil yang bisa dikerjakan secara cepat. Ini menunjukkan area mana yang butuh dipetakan dan area mana yang butuh divalidasi. <br />Pendekatan ini memfasilitasi distribusi pekerjaan ke berbagai pemeta dalam konteks kebencanaan. Alat ini juga memungkinkan untuk mengatur proses dan kesamaan dari hasil pekerjaan yang dikerjakan (contoh elemen apa saja yang dipetakan, tag spesifik yang digunakan, dll)."
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -44,9 +44,9 @@ msgstr "Sponsor dan penyedia dana"
 
 #: osmtm/templates/about.mako:15
 msgid ""
-"OSM Tasking Manager was designed and built for the <a "
+"Map for Environment - OSM Tasking Manager was designed and built for the <a "
 "href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "OSM Tasking Manager telah dirancang dan dibangun untuk <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+msgstr "Map for Environment - OSM Tasking Manager telah dirancang dan dibangun untuk <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"
@@ -66,15 +66,15 @@ msgstr "Open Source"
 
 #: osmtm/templates/about.mako:56
 msgid ""
-"OSM Tasking Manager is an open source software.<br>Feel free to report "
+"Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report "
 "issues and contribute."
-msgstr "OSM Tasking Manager merupakan sebuah perangkat lunak open source. <br> Anda bebas untuk berkontribusi dan melaporkan masalah."
+msgstr "Map for Environment - OSM Tasking Manager merupakan sebuah perangkat lunak open source. <br> Anda bebas untuk berkontribusi dan melaporkan masalah."
 
 #: osmtm/templates/about.mako:58
 msgid ""
-"The <a href=\"http://github.com/hotosm/osm-tasking-manager2\">application "
+"The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application "
 "code</a> is available on github"
-msgstr "<a href=\"http://github.com/hotosm/osm-tasking-manager2\">Kode aplikasi</a> terdapat dalam github"
+msgstr "<a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">Kode aplikasi</a> terdapat dalam github"
 
 #: osmtm/templates/about.mako:60
 msgid ""
@@ -84,9 +84,9 @@ msgstr "Pemimpin pengembangan: Pierre GIRAUD (<a href=\"//www.camptocamp.com\">C
 
 #: osmtm/templates/about.mako:61
 msgid ""
-"with the help of <a href=\"https://github.com/hotosm/osm-tasking-"
+"with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-"
 "manager2/graphs/contributors\">other contributors</a>."
-msgstr "dengan bantuan dari <a href=\"https://github.com/hotosm/osm-tasking-manager2/graphs/contributors\">kontributor lainnya</a>."
+msgstr "dengan bantuan dari <a href=\"https://github.com/mapforenvironment/osm-tasking-manager2/graphs/contributors\">kontributor lainnya</a>."
 
 #: osmtm/templates/about.mako:70
 msgid "Version"
@@ -129,8 +129,8 @@ msgid ""
 " /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop "
 "down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT "
 "IRC Channel #hot</a><br /><br />General inquries and comments are welcomed "
-"at: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
-msgstr "Jika anda memiliki pertanyaan mengenai sebuah proyek, sebuah task atau pemetaan secara umum silahkan ajukan pertanyaan anda melalui mailing list kami: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Atau kunjungi kami di IRC Chat Channel, pilih #hot pada daftar pilihan channel:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Pertanyaan umum dan komentar juga dipersilahkan untuk dikirimkan melalui: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
+"at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
+msgstr "Jika anda memiliki pertanyaan mengenai sebuah proyek, sebuah task atau pemetaan secara umum silahkan ajukan pertanyaan anda melalui mailing list kami: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Atau kunjungi kami di IRC Chat Channel, pilih #hot pada daftar pilihan channel:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Pertanyaan umum dan komentar juga dipersilahkan untuk dikirimkan melalui: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
 
 #: osmtm/templates/custom.mako:16
 msgid "Email HOT at"
@@ -822,8 +822,8 @@ msgid "Assigned"
 msgstr "Ditentukan"
 
 #: osmtm/templates/start.mako:4
-msgid "OSM Tasking Manager"
-msgstr "OSM Tasking Manager"
+msgid "Map for Environment - OSM Tasking Manager"
+msgstr "Map for Environment - OSM Tasking Manager"
 
 #: osmtm/templates/start.mako:13
 msgid "Welcome, new user!"

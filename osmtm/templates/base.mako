@@ -113,7 +113,7 @@ ${message | n}
     <footer class="footer">
       <div class="container">
 <%
-        link = "<a href='http://github.com/hotosm/osm-tasking-manager2'>github</a>"
+        link = "<a href='http://github.com/mapforenvironment/osm-tasking-manager2'>github</a>"
         text = _('Fork the code on ${github_link}.', mapping={'github_link': link})
 %>
 

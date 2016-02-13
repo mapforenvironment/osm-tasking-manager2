@@ -18,7 +18,7 @@ See a list of Tasking Manager installations [here](http://wiki.openstreetmap.org
 
 First clone the git repository:
 
-    git clone --recursive git://github.com/hotosm/osm-tasking-manager2.git
+    git clone --recursive git://github.com/mapforenvironment/osm-tasking-manager2.git
 
 Installing OSMTM in a Virtual Python environment is recommended.
 
@@ -189,7 +189,7 @@ OSMTM is localized on [Transifex](https://www.transifex.com/projects/p/osm-taski
 
 It's possible to create translations for two resources: **current** and
 **master**. *Current* resource represents currently deployed instance of the
-OSMTM [http://tasks.hotosm.org](). *Master* resource represents actively
+OSMTM [http://tasks.mapforenvironment.org](). *Master* resource represents actively
 developed code that will become *current* once it gets deployed.
 
 ### Initializing translation files

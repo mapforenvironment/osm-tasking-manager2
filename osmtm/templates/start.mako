@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 <%inherit file="base.mako"/>
 <%block name="header">
-<h1>${_('OSM Tasking Manager')}</h1>
+<h1>${_('Map for Environment - OSM Tasking Manager')}</h1>
 </%block>
 <%block name="content">
 <%

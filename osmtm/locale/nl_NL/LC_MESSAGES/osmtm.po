@@ -26,11 +26,11 @@ msgstr ""
 #: osmtm/templates/about.mako:10 osmtm/templates/base.mako:123
 #: osmtm/templates/home.mako:93
 msgid "About the Tasking Manager"
-msgstr "Over de OSM Tasking Manager"
+msgstr "Over de Map for Environment - OSM Tasking Manager"
 
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
-"OSM Tasking Manager is a mapping tool designed and built for the "
+"Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
 "Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
@@ -38,7 +38,7 @@ msgid ""
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "OSM Tasking Manager is een hulpmiddel van het Humanitarian OpenStreetMap Team voor het gezamelijk uitvoeren van OpenStreetMap projecten ter ondersteuning van rampen en calimiteiten. Het doel van de OSM Tasking Manager is projecten op te delen in deelgebieden die snel kunnen worden verwerkt. De OSM Tasking Manager toont gebieden die nog niet zijn bewerkt en gebieden die moeten worden gevalideerd. <br />Met dit hulpmiddel kunnen taken worden verdeeld onder vrijwilligers. Dit hulpmiddel geeft ook de mogelijkheid om de voortgang inzichtelijk te maken en vrijwilligers te helpen door bijvoorbeeld aan te geven hoe er getekend moet worden en welke gegevens nodig zijn voor een project (bijvoorbeeld de staat van gebouwen, beschikbaarheid van waterwinplaatsen etc.). "
+msgstr "Map for Environment - OSM Tasking Manager is een hulpmiddel van het Humanitarian OpenStreetMap Team voor het gezamelijk uitvoeren van OpenStreetMap projecten ter ondersteuning van rampen en calimiteiten. Het doel van de Map for Environment - OSM Tasking Manager is projecten op te delen in deelgebieden die snel kunnen worden verwerkt. De Map for Environment - OSM Tasking Manager toont gebieden die nog niet zijn bewerkt en gebieden die moeten worden gevalideerd. <br />Met dit hulpmiddel kunnen taken worden verdeeld onder vrijwilligers. Dit hulpmiddel geeft ook de mogelijkheid om de voortgang inzichtelijk te maken en vrijwilligers te helpen door bijvoorbeeld aan te geven hoe er getekend moet worden en welke gegevens nodig zijn voor een project (bijvoorbeeld de staat van gebouwen, beschikbaarheid van waterwinplaatsen etc.). "
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -46,9 +46,9 @@ msgstr "Fondsen en donaties"
 
 #: osmtm/templates/about.mako:15
 msgid ""
-"OSM Tasking Manager was designed and built for the <a "
+"Map for Environment - OSM Tasking Manager was designed and built for the <a "
 "href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "De OSM Tasking Manager is ontwikkeld for het <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+msgstr "De Map for Environment - OSM Tasking Manager is ontwikkeld for het <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"
@@ -60,7 +60,7 @@ msgstr "Beginnen"
 
 #: osmtm/templates/about.mako:47
 msgid "Some resources to help you start using the Tasking Manager:"
-msgstr "Uitleg van het gebruik van de OSM Tasking Manager:"
+msgstr "Uitleg van het gebruik van de Map for Environment - OSM Tasking Manager:"
 
 #: osmtm/templates/about.mako:54
 msgid "Open Source"
@@ -68,15 +68,15 @@ msgstr "Open Source"
 
 #: osmtm/templates/about.mako:56
 msgid ""
-"OSM Tasking Manager is an open source software.<br>Feel free to report "
+"Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report "
 "issues and contribute."
-msgstr "De OSM Tasking Manager is open source software.<br /> Iedereen kan meedoen en fouten en wensen indienen."
+msgstr "De Map for Environment - OSM Tasking Manager is open source software.<br /> Iedereen kan meedoen en fouten en wensen indienen."
 
 #: osmtm/templates/about.mako:58
 msgid ""
-"The <a href=\"http://github.com/hotosm/osm-tasking-manager2\">application "
+"The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application "
 "code</a> is available on github"
-msgstr "De <a href=\"http://github.com/hotosm/osm-tasking-manager2\">bron code</a> is beschikbaar op github"
+msgstr "De <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">bron code</a> is beschikbaar op github"
 
 #: osmtm/templates/about.mako:60
 msgid ""
@@ -86,9 +86,9 @@ msgstr "Hoofdontwikkelaar: Pierre GIRAUD (<a href=\"//www.camptocamp.com\">Campt
 
 #: osmtm/templates/about.mako:61
 msgid ""
-"with the help of <a href=\"https://github.com/hotosm/osm-tasking-"
+"with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-"
 "manager2/graphs/contributors\">other contributors</a>."
-msgstr "met de hulp van <a href=\"https://github.com/hotosm/osm-tasking-manager2/graphs/contributors\">andere ontwikkelaars</a>."
+msgstr "met de hulp van <a href=\"https://github.com/mapforenvironment/osm-tasking-manager2/graphs/contributors\">andere ontwikkelaars</a>."
 
 #: osmtm/templates/about.mako:70
 msgid "Version"
@@ -131,8 +131,8 @@ msgid ""
 " /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop "
 "down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT "
 "IRC Channel #hot</a><br /><br />General inquries and comments are welcomed "
-"at: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
-msgstr "Bij vragen over een project, een taak of het tekenen in OpenStreetMap in het algemeen kan gebruik worden gemaakt van de mailing-lijst: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Er is ook een IRC kanaal dat bereikbaar is door #hot in te geven in de kanalenlijst:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Algemene vragen en commentaar kan worden gestuurd naar: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
+"at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
+msgstr "Bij vragen over een project, een taak of het tekenen in OpenStreetMap in het algemeen kan gebruik worden gemaakt van de mailing-lijst: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Er is ook een IRC kanaal dat bereikbaar is door #hot in te geven in de kanalenlijst:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Algemene vragen en commentaar kan worden gestuurd naar: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
 
 #: osmtm/templates/custom.mako:16
 msgid "Email HOT at"
@@ -536,7 +536,7 @@ msgid ""
 " first must visit the URL for your instance of OSMTM and Authorize access to"
 " their OpenStreetMap account. After they've done this, their username should"
 " be available for the administrator to add."
-msgstr "Besloten betekent dat alleen een opgegeven lijst van vrijwilligers aan dit project kunnen deelnemen. Om een vrijwilliger toe te kunnen voegen dient deze zich eenmalig te hebben aangemeld bij de OSM Tasking Manager met een bestaande OpenStreetMap gebruikersnaam."
+msgstr "Besloten betekent dat alleen een opgegeven lijst van vrijwilligers aan dit project kunnen deelnemen. Om een vrijwilliger toe te kunnen voegen dient deze zich eenmalig te hebben aangemeld bij de Map for Environment - OSM Tasking Manager met een bestaande OpenStreetMap gebruikersnaam."
 
 #: osmtm/templates/project.edit.mako:366
 msgid "Allowed users"
@@ -825,8 +825,8 @@ msgid "Assigned"
 msgstr "Toegewezen"
 
 #: osmtm/templates/start.mako:4
-msgid "OSM Tasking Manager"
-msgstr "OSM Tasking Manager"
+msgid "Map for Environment - OSM Tasking Manager"
+msgstr "Map for Environment - OSM Tasking Manager"
 
 #: osmtm/templates/start.mako:13
 msgid "Welcome, new user!"
@@ -834,7 +834,7 @@ msgstr "Welkom nieuwe gebruiker!"
 
 #: osmtm/templates/start.mako:17
 msgid "You're ready to use the Tasking Manager."
-msgstr "De OSM Tasking Manager kan nu worden gebruikt."
+msgstr "De Map for Environment - OSM Tasking Manager kan nu worden gebruikt."
 
 #: osmtm/templates/start.mako:17
 msgid "Since you are the first user you'll be given admin rights."

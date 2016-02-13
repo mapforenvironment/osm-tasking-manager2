@@ -30,7 +30,7 @@ msgstr "Informazioni su Tasking Manager"
 
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
-"OSM Tasking Manager is a mapping tool designed and built for the "
+"Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
 "Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
@@ -38,7 +38,7 @@ msgid ""
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "OSM Tasking Manager è uno strumento di mappatura progettato e sviluppato per la mappatura collaborativa dell'Humanitarian OSM Team. Lo scopo dello strumento è suddividere un lavoro di mappatura in compiti più piccoli che possono essere completati rapidamente. Mostra quali aree hanno bisogno di essere mappate e quali necessitano di convalida della mappatura. <br/>Questo approccio facilita la distribuzione dei compiti ai vari mappatori in un contesto di emergenza. Permette anche il controllo del progresso e dell'omogeneità del lavoro svolto (ad esempio elementi da coprire, tag specifici da usare, eccetera)."
+msgstr "Map for Environment - OSM Tasking Manager è uno strumento di mappatura progettato e sviluppato per la mappatura collaborativa dell'Humanitarian OSM Team. Lo scopo dello strumento è suddividere un lavoro di mappatura in compiti più piccoli che possono essere completati rapidamente. Mostra quali aree hanno bisogno di essere mappate e quali necessitano di convalida della mappatura. <br/>Questo approccio facilita la distribuzione dei compiti ai vari mappatori in un contesto di emergenza. Permette anche il controllo del progresso e dell'omogeneità del lavoro svolto (ad esempio elementi da coprire, tag specifici da usare, eccetera)."
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -46,9 +46,9 @@ msgstr "Sponsorizzazione e Finanziamento"
 
 #: osmtm/templates/about.mako:15
 msgid ""
-"OSM Tasking Manager was designed and built for the <a "
+"Map for Environment - OSM Tasking Manager was designed and built for the <a "
 "href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "OSM Tasking Manager è stato progetato e costruito per il<a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+msgstr "Map for Environment - OSM Tasking Manager è stato progetato e costruito per il<a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"
@@ -68,15 +68,15 @@ msgstr "Open Source"
 
 #: osmtm/templates/about.mako:56
 msgid ""
-"OSM Tasking Manager is an open source software.<br>Feel free to report "
+"Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report "
 "issues and contribute."
-msgstr "OSM Tasking Manager è un software open source.<br>Sentiti libero di segnalare problemi e di contribuire."
+msgstr "Map for Environment - OSM Tasking Manager è un software open source.<br>Sentiti libero di segnalare problemi e di contribuire."
 
 #: osmtm/templates/about.mako:58
 msgid ""
-"The <a href=\"http://github.com/hotosm/osm-tasking-manager2\">application "
+"The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application "
 "code</a> is available on github"
-msgstr "Il <a href=\"http://github.com/hotosm/osm-tasking-manager2\">codice dell'applicazione</a> è disponibile su Github"
+msgstr "Il <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">codice dell'applicazione</a> è disponibile su Github"
 
 #: osmtm/templates/about.mako:60
 msgid ""
@@ -86,9 +86,9 @@ msgstr "Sviluppatore principale: Pierre GIRAUD (<a href=\"//www.camptocamp.com\"
 
 #: osmtm/templates/about.mako:61
 msgid ""
-"with the help of <a href=\"https://github.com/hotosm/osm-tasking-"
+"with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-"
 "manager2/graphs/contributors\">other contributors</a>."
-msgstr "con l'aiuto di <a href=\"https://github.com/hotosm/osm-tasking-manager2/graphs/contributors\">altri contributori</a>."
+msgstr "con l'aiuto di <a href=\"https://github.com/mapforenvironment/osm-tasking-manager2/graphs/contributors\">altri contributori</a>."
 
 #: osmtm/templates/about.mako:70
 msgid "Version"
@@ -131,8 +131,8 @@ msgid ""
 " /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop "
 "down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT "
 "IRC Channel #hot</a><br /><br />General inquries and comments are welcomed "
-"at: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
-msgstr "Se hai qualsiasi domanda su un progetto, compito o in generale su come mappare, per favore chiedi tramite la nostra mailing list: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Oppure visitaci nel nostro canale di chat IRC, basta che nel menu selezioni #hot tra la lista di canali:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Richieste di carattere generale e commenti sono benvenuti su: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
+"at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
+msgstr "Se hai qualsiasi domanda su un progetto, compito o in generale su come mappare, per favore chiedi tramite la nostra mailing list: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Oppure visitaci nel nostro canale di chat IRC, basta che nel menu selezioni #hot tra la lista di canali:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Richieste di carattere generale e commenti sono benvenuti su: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
 
 #: osmtm/templates/custom.mako:16
 msgid "Email HOT at"
@@ -825,8 +825,8 @@ msgid "Assigned"
 msgstr "Assegnato"
 
 #: osmtm/templates/start.mako:4
-msgid "OSM Tasking Manager"
-msgstr "OSM Tasking Manager"
+msgid "Map for Environment - OSM Tasking Manager"
+msgstr "Map for Environment - OSM Tasking Manager"
 
 #: osmtm/templates/start.mako:13
 msgid "Welcome, new user!"

@@ -31,7 +31,7 @@ msgstr "À propos du Gestionnaire de Tâches"
 
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
-"OSM Tasking Manager is a mapping tool designed and built for the "
+"Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
 "Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
@@ -47,9 +47,9 @@ msgstr "Parrainage et financement"
 
 #: osmtm/templates/about.mako:15
 msgid ""
-"OSM Tasking Manager was designed and built for the <a "
+"Map for Environment - OSM Tasking Manager was designed and built for the <a "
 "href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "OSM Tasking Manager a été conçu et développé pour <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+msgstr "Map for Environment - OSM Tasking Manager a été conçu et développé pour <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"
@@ -69,15 +69,15 @@ msgstr "Open Source"
 
 #: osmtm/templates/about.mako:56
 msgid ""
-"OSM Tasking Manager is an open source software.<br>Feel free to report "
+"Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report "
 "issues and contribute."
-msgstr "OSM Tasking Manager est un logiciel libre.<br>N'hésitez pas à reporter d'éventuels problèmes et à contribuer à son code."
+msgstr "Map for Environment - OSM Tasking Manager est un logiciel libre.<br>N'hésitez pas à reporter d'éventuels problèmes et à contribuer à son code."
 
 #: osmtm/templates/about.mako:58
 msgid ""
-"The <a href=\"http://github.com/hotosm/osm-tasking-manager2\">application "
+"The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application "
 "code</a> is available on github"
-msgstr "Le <a href=\"http://github.com/hotosm/osm-tasking-manager2\">code de l'application</a> est disponible sur GitHub"
+msgstr "Le <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">code de l'application</a> est disponible sur GitHub"
 
 #: osmtm/templates/about.mako:60
 msgid ""
@@ -87,9 +87,9 @@ msgstr "Développeur principal : Pierre GIRAUD (<a href=\"//www.camptocamp.com\"
 
 #: osmtm/templates/about.mako:61
 msgid ""
-"with the help of <a href=\"https://github.com/hotosm/osm-tasking-"
+"with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-"
 "manager2/graphs/contributors\">other contributors</a>."
-msgstr "avec l'aide d'<a href=\"https://github.com/hotosm/osm-tasking-manager2/graphs/contributors\">autres contributeurs</a>."
+msgstr "avec l'aide d'<a href=\"https://github.com/mapforenvironment/osm-tasking-manager2/graphs/contributors\">autres contributeurs</a>."
 
 #: osmtm/templates/about.mako:70
 msgid "Version"
@@ -132,8 +132,8 @@ msgid ""
 " /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop "
 "down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT "
 "IRC Channel #hot</a><br /><br />General inquries and comments are welcomed "
-"at: <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
-msgstr "Si vous avez des questions sur un projet, une tâche ou de la cartographie en général, veuillez poser vos questions sur notre liste de diffusion : <a href=\"https://lists.openstreetmap.org/listinfo/hot\">Liste de difusion HOT</a><br /><br />Ou bien rendez nous visite sur notre canal de chat IRC, sélectionnez #hot dans la liste de canaux :<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Les renseignements et commentaires généraux sont les bienvenus sur : <a href=\"mailto:info@hotosm.org\" target=\"_top\">info@hotosm.org</a>"
+"at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
+msgstr "Si vous avez des questions sur un projet, une tâche ou de la cartographie en général, veuillez poser vos questions sur notre liste de diffusion : <a href=\"https://lists.openstreetmap.org/listinfo/hot\">Liste de difusion HOT</a><br /><br />Ou bien rendez nous visite sur notre canal de chat IRC, sélectionnez #hot dans la liste de canaux :<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />Les renseignements et commentaires généraux sont les bienvenus sur : <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
 
 #: osmtm/templates/custom.mako:16
 msgid "Email HOT at"
@@ -826,7 +826,7 @@ msgid "Assigned"
 msgstr "Attribué"
 
 #: osmtm/templates/start.mako:4
-msgid "OSM Tasking Manager"
+msgid "Map for Environment - OSM Tasking Manager"
 msgstr "OSM Gestionaire de tâches"
 
 #: osmtm/templates/start.mako:13
