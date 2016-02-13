@@ -46,6 +46,7 @@
       background: #e82;
       box-shadow: 0 0 3px rgba(0,0,0,.3);
       position: fixed;
+      display:none;
     }
     .corner-ribbon a {
       color: #f0f0f0;
