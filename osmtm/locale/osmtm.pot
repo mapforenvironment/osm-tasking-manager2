@@ -41,7 +41,7 @@ msgstr ""
 #: osmtm/templates/about.mako:15
 msgid ""
 "Map for Environment - OSM Tasking Manager was designed and built for the <a "
-"href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+"href=\"http://mapforenvironment.org\">Map for Environment</a>."
 msgstr ""
 
 #: osmtm/templates/about.mako:17

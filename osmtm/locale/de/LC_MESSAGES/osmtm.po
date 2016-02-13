@@ -1,7 +1,7 @@
 # English translations for osmtm.
 # Copyright (C) 2016 ORGANIZATION
 # This file is distributed under the same license as the osmtm project.
-# 
+#
 # Translators:
 # Blake Girardot <bgirardot@gmail.com>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2015
@@ -37,7 +37,7 @@ msgstr "Über den Tasking Manager"
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
 "Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
-"Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
+"Map For Environment collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
 "validated. <br />This approach facilitates the distribution of tasks to the "
@@ -53,8 +53,8 @@ msgstr "Sponsoren und Unterstützer"
 #: osmtm/templates/about.mako:15
 msgid ""
 "Map for Environment - OSM Tasking Manager was designed and built for the <a "
-"href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "Der Map for Environment - OSM Tasking Manager wurde für das <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a> entwickelt."
+"href=\"http://mapforenvironment.org\">Map for Environment</a>."
+msgstr "Der Map for Environment - OSM Tasking Manager wurde für das <a href=\"http://mapforenvironment.org\">Map for Environment</a> entwickelt."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"

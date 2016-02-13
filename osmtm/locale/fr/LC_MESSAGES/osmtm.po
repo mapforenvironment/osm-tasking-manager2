@@ -32,14 +32,14 @@ msgstr "À propos du Gestionnaire de Tâches"
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
 "Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
-"Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
+"Map For Environment collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
 "validated. <br />This approach facilitates the distribution of tasks to the "
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "Le gestionnaire de tâches OSM est un outil de cartographie développé pour Humanitarian OSM Team. Le but de cet outil est de diviser une zone à cartographier en plus petites tâches qui peuvent être réalisées rapidement. On y voit les zones qui doivent être cartographiées ainsi que les zones dont la cartographie a besoin d'être validée.<br />Cette approche facilite la distribution des tâches aux différentes mappeurs dans un contexte d'urgence. Cela permet aussi de contrôler l'avancement et l'homogénéité du travail effectué (ex. éléments à couvrir, mots-clés à utiliser, etc.)."
+msgstr "Le gestionnaire de tâches OSM est un outil de cartographie développé pour Map For Environment. Le but de cet outil est de diviser une zone à cartographier en plus petites tâches qui peuvent être réalisées rapidement. On y voit les zones qui doivent être cartographiées ainsi que les zones dont la cartographie a besoin d'être validée.<br />Cette approche facilite la distribution des tâches aux différentes mappeurs dans un contexte d'urgence. Cela permet aussi de contrôler l'avancement et l'homogénéité du travail effectué (ex. éléments à couvrir, mots-clés à utiliser, etc.)."
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -48,8 +48,8 @@ msgstr "Parrainage et financement"
 #: osmtm/templates/about.mako:15
 msgid ""
 "Map for Environment - OSM Tasking Manager was designed and built for the <a "
-"href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "Map for Environment - OSM Tasking Manager a été conçu et développé pour <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+"href=\"http://mapforenvironment.org\">Map for Environment</a>."
+msgstr "Map for Environment - OSM Tasking Manager a été conçu et développé pour <a href=\"http://mapforenvironment.org\">Map for Environment</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"

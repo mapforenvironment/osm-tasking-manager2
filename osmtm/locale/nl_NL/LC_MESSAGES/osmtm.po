@@ -31,14 +31,14 @@ msgstr "Over de Map for Environment - OSM Tasking Manager"
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
 "Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
-"Humanitarian OSM Team collaborative mapping. The purpose of the tool is to "
+"Map For Environment collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
 "validated. <br />This approach facilitates the distribution of tasks to the "
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "Map for Environment - OSM Tasking Manager is een hulpmiddel van het Humanitarian OpenStreetMap Team voor het gezamelijk uitvoeren van OpenStreetMap projecten ter ondersteuning van rampen en calimiteiten. Het doel van de Map for Environment - OSM Tasking Manager is projecten op te delen in deelgebieden die snel kunnen worden verwerkt. De Map for Environment - OSM Tasking Manager toont gebieden die nog niet zijn bewerkt en gebieden die moeten worden gevalideerd. <br />Met dit hulpmiddel kunnen taken worden verdeeld onder vrijwilligers. Dit hulpmiddel geeft ook de mogelijkheid om de voortgang inzichtelijk te maken en vrijwilligers te helpen door bijvoorbeeld aan te geven hoe er getekend moet worden en welke gegevens nodig zijn voor een project (bijvoorbeeld de staat van gebouwen, beschikbaarheid van waterwinplaatsen etc.). "
+msgstr "Map for Environment - OSM Tasking Manager is een hulpmiddel van het Map for Environment voor het gezamelijk uitvoeren van OpenStreetMap projecten ter ondersteuning van rampen en calimiteiten. Het doel van de Map for Environment - OSM Tasking Manager is projecten op te delen in deelgebieden die snel kunnen worden verwerkt. De Map for Environment - OSM Tasking Manager toont gebieden die nog niet zijn bewerkt en gebieden die moeten worden gevalideerd. <br />Met dit hulpmiddel kunnen taken worden verdeeld onder vrijwilligers. Dit hulpmiddel geeft ook de mogelijkheid om de voortgang inzichtelijk te maken en vrijwilligers te helpen door bijvoorbeeld aan te geven hoe er getekend moet worden en welke gegevens nodig zijn voor een project (bijvoorbeeld de staat van gebouwen, beschikbaarheid van waterwinplaatsen etc.). "
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -47,8 +47,8 @@ msgstr "Fondsen en donaties"
 #: osmtm/templates/about.mako:15
 msgid ""
 "Map for Environment - OSM Tasking Manager was designed and built for the <a "
-"href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
-msgstr "De Map for Environment - OSM Tasking Manager is ontwikkeld for het <a href=\"http://hot.openstreetmap.org\">Humanitarian OpenStreetMap Team</a>."
+"href=\"http://mapforenvironment.org\">Map for Environment</a>."
+msgstr "De Map for Environment - OSM Tasking Manager is ontwikkeld for het <a href=\"http://mapforenvironment.org\">Map for Environment</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"

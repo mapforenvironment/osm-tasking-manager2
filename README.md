@@ -1,5 +1,9 @@
 # OpenStreetMap Tasking Manager
 
+Forked from https://github.com/hotosm/osm-tasking-manager2
+
+Modified for use as the Map for Environment tasking manager.
+
 [![Build Status](https://travis-ci.org/hotosm/osm-tasking-manager2.svg?branch=master)](https://travis-ci.org/hotosm/osm-tasking-manager2)
 [![Coverage Status](https://coveralls.io/repos/hotosm/osm-tasking-manager2/badge.png?branch=master)](https://coveralls.io/r/hotosm/osm-tasking-manager2?branch=master)
 
@@ -87,12 +91,12 @@ You need to make the following changes to the osmtm/views/osmauth.py file.
     import httplib2
     httplib2.debuglevel = 4
     PROXY = httplib2.ProxyInfo(httplib2.socks.PROXY_TYPE_HTTP_NO_TUNNEL, 'PROXY-SERVER', PROXY-PORT)
-    
-NOTE: Replace the PROXY-SERVER with your proxy server address and PROXY-PORT with the port number on which your proxy is established. 
-    
-    # then add "proxy_info=PROXY" for every line in oauth.Client. 
+
+NOTE: Replace the PROXY-SERVER with your proxy server address and PROXY-PORT with the port number on which your proxy is established.
+
+    # then add "proxy_info=PROXY" for every line in oauth.Client.
     client = oauth.Client(consumer, proxy_info=PROXY)
-    
+
     client = oauth.Client(consumer, token, proxy_info=PROXY)
 
 Replace the host address in the development.ini file with your IP address of the system.
