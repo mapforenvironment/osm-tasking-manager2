@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER Kristofor Carle - Moabi <kristoforcarle@moabi.org>
 
 #install dependancies
-RUN apt-get update && apt-get install -y python-pip libpq-dev libgeos-c1 python-dev build-essential
+RUN apt-get update && apt-get install -y python-pip libpq-dev libgeos-c1 python-dev build-essential git
 RUN pip install virtualenv virtualenvwrapper
 RUN pip install --upgrade pip
 
