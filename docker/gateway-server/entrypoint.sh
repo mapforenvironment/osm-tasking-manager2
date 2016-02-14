@@ -75,7 +75,7 @@ http {
   error_log /var/log/nginx/error.log;
 
   upstream taskmgr {
-    server ${TM-WEB_1_PORT_6543_TCP_ADDR}:6543;
+    server ${TM_WEB_1_PORT_6543_TCP_ADDR}:6543;
   }
 
   server {
