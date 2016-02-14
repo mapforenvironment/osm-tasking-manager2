@@ -7,7 +7,6 @@ set -euo pipefail
 MISSING=""
 
 [ -z "${DOMAIN}" ] && MISSING="${MISSING} DOMAIN"
-[ -z "${UPSTREAM}" ] && MISSING="${MISSING} UPSTREAM"
 [ -z "${EMAIL}" ] && MISSING="${MISSING} EMAIL"
 
 if [ "${MISSING}" != "" ]; then
@@ -76,7 +75,7 @@ http {
   error_log /var/log/nginx/error.log;
 
   upstream taskmgr {
-    server ${UPSTREAM};
+    server ${TM-WEB_1_PORT_6543_TCP_ADDR}:6543;
   }
 
   server {
