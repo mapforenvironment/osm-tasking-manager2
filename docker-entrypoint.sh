@@ -44,7 +44,7 @@ local_settings_path = %(here)s/local.ini
 use = egg:waitress#main
 host = 0.0.0.0
 port = 6543
-trusted_proxy= ${GATEWAY_1_PORT_80_TCP_ADDR}
+trusted_proxy= ${TRUSTED_PROXY}
 
 # Begin logging configuration
 
