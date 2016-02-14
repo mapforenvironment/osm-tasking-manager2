@@ -11,6 +11,9 @@ if [ "${MISSING}" != "" ]; then
   exit 1
 fi
 
+
+TRUSTED_PROXY_IP = `getent hosts ${TRUSTED_PROXY} | awk '{print $1}'`
+
 cat <<EOF >/home/tm/local.ini
 [app:main]
 sqlalchemy.url = ${DB_CONNECTION}
@@ -44,7 +47,7 @@ local_settings_path = %(here)s/local.ini
 use = egg:waitress#main
 host = 0.0.0.0
 port = 6543
-trusted_proxy= ${TRUSTED_PROXY}
+trusted_proxy= ${TRUSTED_PROXY_IP}
 
 # Begin logging configuration
 
