@@ -11,8 +11,9 @@ if [ "${MISSING}" != "" ]; then
   exit 1
 fi
 
+TRUSTED_PROXY_IP=`getent hosts ${TRUSTED_PROXY} | awk '{print $1}'`
 
-TRUSTED_PROXY_IP = `getent hosts ${TRUSTED_PROXY} | awk '{print $1}'`
+echo "Trusted Proxy IP: ${TRUSTED_PROXY_IP}"
 
 cat <<EOF >/home/tm/local.ini
 [app:main]
