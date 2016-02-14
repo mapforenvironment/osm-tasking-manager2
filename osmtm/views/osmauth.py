@@ -1,7 +1,3 @@
-import httplib2
-httplib2.debuglevel = 4
-PROXY = httplib2.ProxyInfo(httplib2.socks.PROXY_TYPE_HTTP_NO_TUNNEL, 'tasks.mapforenvironment.org', 443)
-
 from pyramid.view import view_config
 from xml.etree import ElementTree
 from pyramid.httpexceptions import HTTPFound, HTTPBadGateway, HTTPBadRequest
@@ -44,7 +40,7 @@ consumer = oauth.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
 @view_config(route_name='login')
 def login(request):  # pragma: no cover
     # get the request token
-    client = oauth.Client(consumer, proxy_info=PROXY)
+    client = oauth.Client(consumer)
     oauth_callback_url = request.route_url('oauth_callback')
     url = "%s?oauth_callback=%s" % (REQUEST_TOKEN_URL, oauth_callback_url)
     resp, content = client.request(url, "GET")
@@ -74,14 +70,14 @@ def oauth_callback(request):  # pragma: no cover
                         request_token['oauth_token_secret'])
     verifier = request.params.get('oauth_verifier')
     token.set_verifier(verifier)
-    client = oauth.Client(consumer, token, proxy_info=PROXY)
+    client = oauth.Client(consumer, token)
     resp, content = client.request(ACCESS_TOKEN_URL, "POST")
     access_token = dict(urlparse.parse_qsl(content))
     token = access_token['oauth_token']
     token_secret = access_token['oauth_token_secret']
     # get the user details, finally
     token = oauth.Token(token, token_secret)
-    client = oauth.Client(consumer, token, proxy_info=PROXY)
+    client = oauth.Client(consumer, token)
     resp, content = client.request(USER_DETAILS_URL, "GET")
     user_elt = ElementTree.XML(content).find('user')
     # save the user's "display name" in the session
