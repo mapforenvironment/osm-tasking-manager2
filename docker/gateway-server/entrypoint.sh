@@ -129,7 +129,7 @@ http {
   }
 
   upstream wordpress {
-    server ${WORDPRESS_1_PORT_8080_TCP_ADDR}:8080;
+    server ${WORDPRESS_1_PORT_80_TCP_ADDR}:80;
   }
 
   server {

@@ -98,10 +98,6 @@ sorts = [('priority', 'asc', _('High priority first')),
     <p>
     ${custom.main_page_new_to_mapping_info()}
     </p>
-    <hr />
-    <p>
-    ${custom.main_page_community_info()}
-    </p>
   </div>
 </div>
 </%block>
