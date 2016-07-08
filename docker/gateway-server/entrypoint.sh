@@ -125,7 +125,7 @@ http {
   server {
     listen 80;
     server_name "${TASKSDOMAIN}";
-    return 301 https://\$server_name\$request_uri;
+    return 301 https://${TASKSDOMAIN}\$request_uri;
   }
 
   upstream wordpress {
@@ -175,7 +175,7 @@ http {
   server {
     listen 80;
     server_name "${DOMAIN}";
-    return 301 https://\$server_name\$request_uri;
+    return 301 https://${DOMAIN}\$request_uri;
   }
 }
 EOF
