@@ -7,6 +7,7 @@ set -euo pipefail
 MISSING=""
 
 [ -z "${DOMAIN}" ] && MISSING="${MISSING} DOMAIN"
+[ -z "${TASKSDOMAIN}" ] && MISSING="${TASKSDOMAIN} DOMAIN"
 [ -z "${EMAIL}" ] && MISSING="${MISSING} EMAIL"
 
 if [ "${MISSING}" != "" ]; then
@@ -74,16 +75,18 @@ http {
   access_log /var/log/nginx/access.log;
   error_log /var/log/nginx/error.log;
 
+
+
   upstream taskmgr {
     server ${TM_WEB_1_PORT_6543_TCP_ADDR}:6543;
   }
 
   server {
     listen 443 ssl;
-    server_name "${DOMAIN}";
+    server_name "${TASKSDOMAIN}";
 
-    ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/${TASKSDOMAIN}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${TASKSDOMAIN}/privkey.pem;
     ssl_dhparam /etc/ssl/dhparams.pem;
 
     ssl_ciphers "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA";
@@ -121,6 +124,56 @@ http {
   # Redirect from port 80 to port 443
   server {
     listen 80;
+    server_name "${TASKSDOMAIN}";
+    return 301 https://\$server_name\$request_uri;
+  }
+
+  upstream wordpress {
+    server ${WORDPRESS_1_PORT_8080_TCP_ADDR}:8080;
+  }
+
+  server {
+    listen 443 ssl;
+    server_name "${DOMAIN}";
+
+    ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+    ssl_dhparam /etc/ssl/dhparams.pem;
+
+    ssl_ciphers "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA";
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+    ssl_session_tickets off;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    root /etc/letsencrypt/webrootauth;
+
+    location / {
+      proxy_pass http://wordpress;
+      proxy_set_header Host \$host;
+      proxy_set_header X-Real-IP \$remote_addr;
+      proxy_set_header X-Forwarded-For \$remote_addr;
+      proxy_set_header X-Forwarded-Proto \$scheme;
+      proxy_cache   anonymous;
+      proxy_read_timeout 600s;
+      proxy_send_timeout 600s;
+    }
+
+    location /.well-known/acme-challenge {
+      alias /etc/letsencrypt/webrootauth/.well-known/acme-challenge;
+      location ~ /.well-known/acme-challenge/(.*) {
+        add_header Content-Type application/jose+json;
+      }
+    }
+  }
+
+  server {
+    listen 80;
     server_name "${DOMAIN}";
     return 301 https://\$server_name\$request_uri;
   }
@@ -136,6 +189,14 @@ if [ ! -f /etc/letsencrypt/live/${DOMAIN}/fullchain.pem ]; then
     --email "${EMAIL}" --agree-tos
 fi
 
+if [ ! -f /etc/letsencrypt/live/${TASKSDOMAIN}/fullchain.pem ]; then
+  letsencrypt certonly \
+    --domain ${TASKSDOMAIN} \
+    --authenticator standalone \
+    ${SERVER} \
+    --email "${EMAIL}" --agree-tos
+fi
+
 # Template a cronjob to reissue the certificate with the webroot authenticator
 cat <<EOF >/etc/periodic/monthly/reissue
 #!/bin/sh
@@ -143,6 +204,12 @@ cat <<EOF >/etc/periodic/monthly/reissue
 set -euo pipefail
 
 # Certificate reissue
+letsencrypt certonly --renew-by-default \
+  --domain "${TASKSDOMAIN}" \
+  --authenticator webroot \
+  --webroot-path /etc/letsencrypt/webrootauth/ ${SERVER} \
+  --email "${EMAIL}" --agree-tos
+
 letsencrypt certonly --renew-by-default \
   --domain "${DOMAIN}" \
   --authenticator webroot \
