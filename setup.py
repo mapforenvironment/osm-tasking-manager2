@@ -17,6 +17,7 @@ requires = [
     'waitress',
     'psycopg2',
     'markdown',
+    'html5lib==0.9999999',
     'bleach==1.4',
     'nose',
     'coverage',
