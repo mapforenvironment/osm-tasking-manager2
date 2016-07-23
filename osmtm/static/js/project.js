@@ -99,7 +99,9 @@ osmtm.project = (function() {
     lmap = L.map('leaflet');
     L.control.scale().addTo(lmap);
     // create the tile layer with correct attribution
-    var osmUrl='//tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+    //var osmUrl='//tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+    //https://a.tile.openstreetmap.org/19/262143/262143.png
+    var osmUrl='//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib=osmAttribI18n;
     var osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});
     lmap.addLayer(osm);
