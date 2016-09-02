@@ -477,7 +477,7 @@ osmtm.project = (function() {
           break;
         }
         url = getLink({
-          base: 'http://www.openstreetmap.org/edit?editor=id&',
+          base: 'http://id.loggingroads.org/',
           bounds: task_bounds,
           centroid: task_centroid,
           protocol: 'id'
