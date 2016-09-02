@@ -4,10 +4,10 @@ import datetime
 timestamp = datetime.datetime.utcnow()
 timestamp = timestamp.isoformat()
 %>
-<gpx xmlns="http://www.topografix.com/GPX/1/1">
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="Map for Environment Tasking Manager">
 <metadata>
   <link href="https://github.com/mapforenvironment/osm-tasking-manager2">
-    <text>HOT Tasking Manager</text>
+    <text>Map for Environment Tasking Manager</text>
   </link>
   <time>${timestamp}</time>
 </metadata>
