@@ -472,7 +472,7 @@ def task_assign_delete(request):
 def task_gpx(request):
     task = __get_task(request)
     request.response.headerlist.append(('Access-Control-Allow-Origin',
-                                        'http://www.openstreetmap.org'))
+                                        '*'))
     return dict(multipolygon=shape.to_shape(task.geometry),
                 project_id=task.project_id)
 
@@ -481,7 +481,7 @@ def task_gpx(request):
 def task_osm(request):
     task = __get_task(request)
     request.response.headerlist.append(('Access-Control-Allow-Origin',
-                                        'http://www.openstreetmap.org'))
+                                        '*'))
     return dict(multipolygon=shape.to_shape(task.geometry),
                 project_id=task.project_id)
 
