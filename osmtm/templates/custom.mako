@@ -2,7 +2,7 @@
   Map for Environment - OSM Tasking Manager
 </%def>
 
-<%def  name="main_page_new_to_mapping_info()">
+<%def  name="main_page_right_panel()">
   <h4>${_('New to Mapping?')}</h4>
   ${_('Just jump over to <a target="_blank" href="http://www.openstreetmap.org">OpenStreetMap</a>, create an account, and then visit <a target="_blank" href="http://learnosm.org/en/beginner/id-editor">this tutorial</a>. Then come back here to help map for people on the ground!')|n}
 </%def>
