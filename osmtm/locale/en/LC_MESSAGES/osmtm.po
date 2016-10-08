@@ -1,7 +1,7 @@
 # English translations for osmtm.
 # Copyright (C) 2016 ORGANIZATION
 # This file is distributed under the same license as the osmtm project.
-# 
+#
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014-2016
 msgid ""
@@ -26,15 +26,15 @@ msgstr "About the Tasking Manager"
 
 #: osmtm/templates/about.mako:12 osmtm/templates/home.mako:95
 msgid ""
-"Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the "
-"Map For Environment collaborative mapping. The purpose of the tool is to "
+"Logging Roads - OSM Tasking Manager is a mapping tool designed and built for the "
+"Logging Roads collaborative mapping. The purpose of the tool is to "
 "divide up a mapping job into smaller tasks that can be completed rapidly. It"
 " shows which areas need to be mapped and which areas need the mapping "
 "validated. <br />This approach facilitates the distribution of tasks to the "
 "various mappers in a context of emergency. It also permits to control the "
 "progress and the homogeneity of the work done (ie. Elements to cover, "
 "specific tags to use, etc.)."
-msgstr "Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the Map For Environment collaborative mapping. The purpose of the tool is to divide up a mapping job into smaller tasks that can be completed rapidly. It shows which areas need to be mapped and which areas need the mapping validated. <br />This approach facilitates the distribution of tasks to the various mappers in a context of emergency. It also permits to control the progress and the homogeneity of the work done (ie. Elements to cover, specific tags to use, etc.)."
+msgstr "Logging Roads - OSM Tasking Manager is a mapping tool designed and built for the Logging Roads collaborative mapping. The purpose of the tool is to divide up a mapping job into smaller tasks that can be completed rapidly. It shows which areas need to be mapped and which areas need the mapping validated. <br />This approach facilitates the distribution of tasks to the various mappers in a context of emergency. It also permits to control the progress and the homogeneity of the work done (ie. Elements to cover, specific tags to use, etc.)."
 
 #: osmtm/templates/about.mako:14
 msgid "Sponsorship and Funding"
@@ -42,9 +42,9 @@ msgstr "Sponsorship and Funding"
 
 #: osmtm/templates/about.mako:15
 msgid ""
-"Map for Environment - OSM Tasking Manager was designed and built for the <a "
-"href=\"http://mapforenvironment.org\">Map for Environment</a>."
-msgstr "Map for Environment - OSM Tasking Manager was designed and built for the <a href=\"http://mapforenvironment.org\">Map for Environment</a>."
+"Logging Roads - OSM Tasking Manager was designed and built for the <a "
+"href=\"http://loggingroads.org\">Logging Roads</a>."
+msgstr "Logging Roads - OSM Tasking Manager was designed and built for the <a href=\"http://loggingroads.org\">Logging Roads</a>."
 
 #: osmtm/templates/about.mako:17
 msgid "With the invaluable help from:"
@@ -64,15 +64,15 @@ msgstr "Open Source"
 
 #: osmtm/templates/about.mako:56
 msgid ""
-"Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report "
+"Logging Roads - OSM Tasking Manager is an open source software.<br>Feel free to report "
 "issues and contribute."
-msgstr "Map for Environment - OSM Tasking Manager is an open source software.<br>Feel free to report issues and contribute."
+msgstr "Logging Roads - OSM Tasking Manager is an open source software.<br>Feel free to report issues and contribute."
 
 #: osmtm/templates/about.mako:58
 msgid ""
-"The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application "
+"The <a href=\"http://github.com/loggingroads/osm-tasking-manager2\">application "
 "code</a> is available on github"
-msgstr "The <a href=\"http://github.com/mapforenvironment/osm-tasking-manager2\">application code</a> is available on github"
+msgstr "The <a href=\"http://github.com/loggingroads/osm-tasking-manager2\">application code</a> is available on github"
 
 #: osmtm/templates/about.mako:60
 msgid ""
@@ -82,9 +82,9 @@ msgstr "Lead developer: Pierre GIRAUD (<a href=\"//www.camptocamp.com\">Camptoca
 
 #: osmtm/templates/about.mako:61
 msgid ""
-"with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-"
+"with the help of <a href=\"https://github.com/loggingroads/osm-tasking-"
 "manager2/graphs/contributors\">other contributors</a>."
-msgstr "with the help of <a href=\"https://github.com/mapforenvironment/osm-tasking-manager2/graphs/contributors\">other contributors</a>."
+msgstr "with the help of <a href=\"https://github.com/loggingroads/osm-tasking-manager2/graphs/contributors\">other contributors</a>."
 
 #: osmtm/templates/about.mako:70
 msgid "Version"
@@ -127,8 +127,8 @@ msgid ""
 " /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop "
 "down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT "
 "IRC Channel #hot</a><br /><br />General inquries and comments are welcomed "
-"at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
-msgstr "If you have any questions about a project, a task or mapping in general please ask on our mailing list: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />General inquries and comments are welcomed at: <a href=\"mailto:info@mapforenvironment.org\" target=\"_top\">info@mapforenvironment.org</a>"
+"at: <a href=\"mailto:info@loggingroads.org\" target=\"_top\">info@loggingroads.org</a>"
+msgstr "If you have any questions about a project, a task or mapping in general please ask on our mailing list: <a href=\"https://lists.openstreetmap.org/listinfo/hot\">HOT E-Mail List</a><br /><br />Or visit us in our IRC Chat Channel, just select #hot from the pop down channel list:<br /><a href=\"http://irc.openstreetmap.org/\">OSM HOT IRC Channel #hot</a><br /><br />General inquries and comments are welcomed at: <a href=\"mailto:info@loggingroads.org\" target=\"_top\">info@loggingroads.org</a>"
 
 #: osmtm/templates/custom.mako:16
 msgid "Email HOT at"
@@ -821,8 +821,8 @@ msgid "Assigned"
 msgstr "Assigned"
 
 #: osmtm/templates/start.mako:4
-msgid "Map for Environment - OSM Tasking Manager"
-msgstr "Map for Environment - OSM Tasking Manager"
+msgid "Logging Roads - OSM Tasking Manager"
+msgstr "Logging Roads - OSM Tasking Manager"
 
 #: osmtm/templates/start.mako:13
 msgid "Welcome, new user!"

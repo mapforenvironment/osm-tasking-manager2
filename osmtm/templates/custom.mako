@@ -1,5 +1,5 @@
 <%def  name="instance_name()">
-  Map for Environment - OSM Tasking Manager
+  Logging Roads - OSM Tasking Manager
 </%def>
 
 <%def  name="main_page_right_panel()">
@@ -8,8 +8,8 @@
 </%def>
 
 <%def  name="footer_contact_text()">
-  ${_('Email Map for Environment at')} <a href='mailto:info@mapforenvironment.org'>info@mapforenvironment.org</a><br />
-  ${_('Follow Map for Environment on')} <a href='http://www.twitter.com/map4env'>Twitter</a><br />
+  ${_('Email Logging Roads at')} <a href='mailto:info@loggingroads.org'>info@loggingroads.org</a><br />
+  ${_('Follow Logging Roads on')} <a href='http://www.twitter.com/loggingroads'>Twitter</a><br />
 </%def>
 
 <%def name="analytics()">
@@ -23,11 +23,10 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-80486445-2', 'auto');
+  ga('create', 'UA-68439434-4', 'auto');
   ga('send', 'pageview');
 
 </script>
-<script>!function(e,o,n){window.HSCW=o,window.HS=n,n.beacon=n.beacon||{};var t=n.beacon;t.userConfig={color: '#5CA038', icon: 'message'},t.readyQueue=[],t.config=function(e){this.userConfig=e},t.ready=function(e){this.readyQueue.push(e)},o.config={docs:{enabled:!1,baseUrl:""},contact:{enabled:!0,formId:"8e51c6ca-42f8-11e6-aae8-0a7d6919297d"}};var r=e.getElementsByTagName("script")[0],c=e.createElement("script");c.type="text/javascript",c.async=!0,c.src="https://djtflbt20bdde.cloudfront.net/",r.parentNode.insertBefore(c,r)}(document,window.HSCW||{},window.HS||{});</script>
 
 </%def>
 
@@ -104,6 +103,6 @@
     }
   </style>
   <div class="corner-ribbon top-left sticky orange shadow ">
-    <a href="https://donate.mapforenvironment.org" target="_blank">${_('Please donate!')}</a>
+    <a href="https://donate.loggingroads.org" target="_blank">${_('Please donate!')}</a>
   </div>
 </%def>

@@ -2,7 +2,7 @@
 
 Forked from https://github.com/hotosm/osm-tasking-manager2
 
-Modified for use as the Map for Environment tasking manager.
+Modified for use as the Logging Roads tasking manager.
 
 [![Build Status](https://travis-ci.org/hotosm/osm-tasking-manager2.svg?branch=master)](https://travis-ci.org/hotosm/osm-tasking-manager2)
 [![Coverage Status](https://coveralls.io/repos/hotosm/osm-tasking-manager2/badge.png?branch=master)](https://coveralls.io/r/hotosm/osm-tasking-manager2?branch=master)
@@ -22,7 +22,7 @@ See a list of Tasking Manager installations [here](http://wiki.openstreetmap.org
 
 First clone the git repository:
 
-    git clone --recursive git://github.com/mapforenvironment/osm-tasking-manager2.git
+    git clone --recursive git://github.com/loggingroads/osm-tasking-manager2.git
 
 Installing OSMTM in a Virtual Python environment is recommended.
 
@@ -193,7 +193,7 @@ OSMTM is localized on [Transifex](https://www.transifex.com/projects/p/osm-taski
 
 It's possible to create translations for two resources: **current** and
 **master**. *Current* resource represents currently deployed instance of the
-OSMTM [http://tasks.mapforenvironment.org](). *Master* resource represents actively
+OSMTM [http://tasks.loggingroads.org](). *Master* resource represents actively
 developed code that will become *current* once it gets deployed.
 
 ### Initializing translation files
