@@ -47,7 +47,7 @@ else:
   <div class="col-md-6">
   % if changeset_count != 'null':
   <p>
-    ${_('This user has submitted ${changes} total changesets.', mapping={'changes':changeset_count})}
+    ${ngettext('This user has submitted ${changes} total changeset.', 'This user has submitted ${changes} total changesets.', changeset_count, mapping={'changes':changeset_count})}
   </p>
   % endif
   </div>
@@ -99,9 +99,7 @@ else:
               title="${_('Project Details')}">
               #${p['project'].id} ${p["project"].name}
             </a>
-            (
-            ${_('${count} tiles', mapping={'count': p["count"]})}
-            )
+            (${ngettext('${count} tile', '${count} tiles', p['count'], mapping={'count': p['count']})})
             ${overpassturbo_link(p['project'])}
           </li>
         % endfor
@@ -125,6 +123,6 @@ query = u'<osm-script output="json" timeout="25"><union><query type="node"><user
 query = urllib.quote_plus(query.encode('utf8'))
 %>
 <small>
-  <a href="http://overpass-turbo.eu/map.html?Q=${query}" ><span class="glyphicon glyphicon-share-alt"></span> overpass-turbo</a>
+  <a href="http://overpass-turbo.eu/map.html?Q=${query}" ><span class="glyphicon glyphicon-share-alt"></span> overpass turbo</a>
 </small>
 </%def>

@@ -8,7 +8,9 @@
     <link rel="shortcut icon" href="${request.static_url('osmtm:static/img/favicon.ico')}">
     <link rel="stylesheet" href="${request.static_url('osmtm:static/css/main.css')}">
     <link rel="stylesheet" href="${request.static_url('osmtm:static/js/lib/leaflet.css')}">
-    <script src="${request.static_url('osmtm:static/js/lib/jquery-1.7.2.min.js')}"></script>
+    <script src="${request.static_url('osmtm:static/js/lib/jquery-1.12.3.min.js')}"></script>
+    <script src="${request.static_url('osmtm:static/js/lib/velocity.min.js')}"></script>
+    <script src="${request.static_url('osmtm:static/js/lib/velocity.ui.min.js')}"></script>
     <script src="${request.static_url('osmtm:static/js/lib/showdown/dist/showdown.js')}"></script>
     <script src="${request.static_url('osmtm:static/js/lib/showdown-youtube.js')}"></script>
     <script src="${request.static_url('osmtm:static/js/lib/jquery-timeago/jquery.timeago.js')}"></script>
@@ -17,14 +19,15 @@
       try:
         timeago_locale = request.static_url(timeago_locale_baseurl % request.locale_name.replace('_', '-'))
       except IOError:
-        timeago_locale = request.static_url(timeago_locale_baseurl % request.locale_name[:2])
-      except IOError:
-        timeago_locale = request.static_url(timeago_locale_baseurl % 'en')
+        try:
+          timeago_locale = request.static_url(timeago_locale_baseurl % request.locale_name[:2])
+        except IOError:
+          timeago_locale = request.static_url(timeago_locale_baseurl % 'en')
     %>
     <script src="${timeago_locale}"></script>
     <script src="${request.static_url('osmtm:static/js/lib/sammy-latest.min.js')}"></script>
-    <script src="${request.static_url('osmtm:static/js/shared.js')}"></script>
     <script src="${request.static_url('osmtm:static/bootstrap/dist/js/bootstrap.min.js')}"></script>
+    <script src="${request.static_url('osmtm:static/js/shared.js')}"></script>
 
 <%
 from osmtm.models import DBSession, TaskComment
@@ -37,6 +40,7 @@ comments = []
     <script>
         var base_url = "${request.route_path('home')}";
         var markdown_ref_url = "${request.static_url('osmtm:static/html/markdown_quick_ref.html')}";
+        var unreadMsgsI18n = "${_('You have unread messages')}";
     </script>
 
   </head>
@@ -54,11 +58,6 @@ comments = []
           </li>
           <%include file="languages_menu.mako" args="languages=languages, languages_full=languages_full"/>
           % if user:
-          <%
-              badge = ""
-              if len(comments) > 0:
-                  badge = '<sup><span class="badge badge-important">%s</span></sup>' % len(comments)
-          %>
           <%include file="user_menu.mako" />
           % else:
           <li>

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 <%namespace file="custom.mako" name="custom"/>
+<%namespace file="helpers.mako" name="helpers"/>
 <%inherit file="base.mako"/>
 <%block name="header">
 </%block>
@@ -75,6 +76,15 @@ sorts = [('priority', 'asc', _('High priority first')),
                 onclick="this.form.submit();"> ${_('Your projects')}
             </label>
           </div>
+            % if user.is_admin or user.is_project_manager:
+            <div class="checkbox input-sm pull-right">
+              <label>
+                <input type="checkbox" name="show_archived"
+                  ${'checked' if request.params.get('show_archived') == 'on' else ''}
+                  onclick="this.form.submit();"> ${_('Include archived projects')}
+              </label>
+            </div>
+            % endif
           % else:
           <br>
           % endif
@@ -90,14 +100,7 @@ sorts = [('priority', 'asc', _('High priority first')),
     % endif
   </div>
   <div class="col-md-6">
-    <h3>${_('About the Tasking Manager')}</h3>
-    <p>
-    ${_('Map for Environment - OSM Tasking Manager is a mapping tool designed and built for the Map For Environment collaborative mapping. The purpose of the tool is to divide up a mapping job into smaller tasks that can be completed rapidly. It shows which areas need to be mapped and which areas need the mapping validated. <br />This approach facilitates the distribution of tasks to the various mappers in a context of emergency. It also permits to control the progress and the homogeneity of the work done (ie. Elements to cover, specific tags to use, etc.).')|n}
-    </p>
-    <hr />
-    <p>
-    ${custom.main_page_new_to_mapping_info()}
-    </p>
+    ${custom.main_page_right_panel()}
   </div>
 </div>
 </%block>
@@ -108,7 +111,6 @@ sorts = [('priority', 'asc', _('High priority first')),
     from osmtm.mako_filters import markdown_filter
     if request.locale_name:
         project.locale = request.locale_name
-    priority = priorities[project.priority]
 
     if project.status == project.status_archived:
         status = 'Archived'
@@ -164,20 +166,7 @@ sorts = [('priority', 'asc', _('High priority first')),
   </div>
   ${project.short_description | markdown_filter, n}
   <div class="clear"></div>
-  <small class="text-muted">
-    % if project.private:
-    <span class="glyphicon glyphicon-lock"
-          title="${_('Access to this project is limited')}"></span> -
-    % endif
-    % if project.author:
-    <span>${_('Created by')} <a href="${request.route_path('user',username=project.author.username)}">${project.author.username}</a></span> -
-    % endif
-    <span>${_('Updated')} <span class="timeago" title="${project.last_update}Z"></span></span> -
-    <span>${_('Priority:')} ${priority}</span>
-    % if status:
-    - <span>${_(status)}</span>
-    % endif
-  </small>
+  ${helpers.display_project_info(project=project)}
 </div>
 </%def>
 

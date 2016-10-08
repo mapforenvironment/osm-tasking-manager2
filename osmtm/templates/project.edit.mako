@@ -16,9 +16,10 @@
   try:
     bootstrap_locale = request.static_url(bootstrap_locale_baseurl % request.locale_name.replace('_', '-'))
   except IOError:
-    bootstrap_locale = request.static_url(bootstrap_locale_baseurl % request.locale_name[:2])
-  except IOError:
-    bootstrap_locale = request.static_url(bootstrap_locale_baseurl % 'en')
+    try:
+      bootstrap_locale = request.static_url(bootstrap_locale_baseurl % request.locale_name[:2])
+    except IOError:
+      bootstrap_locale = request.static_url(bootstrap_locale_baseurl % 'en')
 %>
 <script type="text/javascript" src="${bootstrap_locale}"></script>
 
@@ -72,6 +73,47 @@
     </div>
   </div>
 </div>
+<!-- Message Modal -->
+<div class="modal fade" id="messageAllModal" tabindex="-1" role="dialog" aria-labelledby="messageAll">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">${_('Message all contributors')}</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          ${_("This will send a Tasking Manager message to every contributor of the current project.")}
+        </p>
+        <p class="text-warning">
+          ${_("Please use this feature conservatively.")}
+        </p>
+        <hr>
+        <p class="form-group">
+          <input id="message_all_subject" class="input form-control" placeholder="${_('Subject')}"/>
+        </p>
+        <p>
+          <textarea id="message_all_message" name="message_all_message" class="form-control" placeholder="${_('Message')}" rows="6"></textarea>
+          <p class="help-block">
+            ${_('This message does not automatically translate, so you may want to include your own translations.')}
+          </p>
+        </p>
+        <p class="errors text-danger"></p>
+      </div>
+      <div class="modal-footer">
+        <div class="text-right">
+          <a class="btn btn-default" data-dismiss="modal" aria-label="Close">
+            ${_('Cancel')}
+          </a>
+          <a class="btn btn-primary btn-message-all">
+             ${_('Message all contributors')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   var converter = new showdown.Converter({extensions: ['youtube']});
   var project_id = ${project.id};
@@ -279,8 +321,12 @@ geometry = loads(str(project.area.geometry.data))
           ${textarea_with_preview(inputname='per_task_instructions')}
 
           <span class="help-block col-md-9">
+          % if project.zoom:
             ${_('Put here anything that can be useful to users while taking a task. {x}, {y} and {z} will be replaced by the corresponding parameters for each task.')}<br />
-            ${_('For example:')}<em> ${_('" This task involves loading extra data. Click [here](http://localhost:8111/import?new_layer=true&url=http://www.domain.com/data/{x}/{y}/{z}/routes_2009.osm) to load the data into JOSM')}"</em>
+            ${_('For example:')} « <em>${_('This task involves loading extra data. Click [here](http://localhost:8111/import?new_layer=true&url=http://www.domain.com/data/{x}/{y}/{z}/routes_2009.osm) to load the data into JOSM')}</em> ».
+          % else:
+            ${_('Put here anything that can be useful to users while taking a task. If you have added extra properties within the GeoJSON of the task, they can be referenced by surrounding them in curly braces. For eg. if you have a property called "import_url" in your GeoJSON, you can reference it like:')} « <em>${_('This task involves loading extra data. Click [here](http://localhost:8111/import?new_layer=true&url={import_url}) to load the data into JOSM')}</em> ».
+          % endif
           </span>
         </div>
       </div>
@@ -300,7 +346,10 @@ geometry = loads(str(project.area.geometry.data))
 <div class="row">
   <div class="col-md-4">
     <label>
-      ${_('${count_of} priority area(s)', mapping={'count_of': len(project.priority_areas)})}
+      <%
+        count = len(project.priority_areas)
+      %>
+      ${ngettext('${count} priority area', '${count} priority areas', count, mapping={'count': count})}
     </label>
     <div class="help-block">
     ${_('If you want mappers to work on the highest priority areas first, draw one or more polygons within the project area.')}
@@ -448,6 +497,15 @@ geometry = loads(str(project.area.geometry.data))
   </div>
   <p id="invalidateAllSuccess">
   </p>
+</div>
+<div class="form-group">
+  <label>${_('Message all contributors')}</label>
+  <br>
+  <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#messageAllModal">
+    <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+    ${_('Message all contributors')}
+  </button>
+  <p id="messageAllSuccess"></p>
 </div>
 </%block>
 <%block name="markdown_link">

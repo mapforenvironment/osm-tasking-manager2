@@ -48,13 +48,15 @@ from geojson import (
 import datetime
 import itertools
 
-from .task import get_locked_task, add_comment
+from .task import get_locked_task, add_comment, send_message
 
 from ..utils import (
     parse_geojson,
     convert_to_multipolygon,
     get_tiles_in_geom,
 )
+
+from user import username_to_userid
 
 import logging
 log = logging.getLogger(__name__)
@@ -175,6 +177,7 @@ def project_new_grid(request):
              permission="project_edit")
 def project_new_arbitrary(request):
     _ = request.translate
+    ngettext = request.plural_translate
 
     user_id = authenticated_userid(request)
     user = DBSession.query(User).get(user_id)
@@ -185,9 +188,12 @@ def project_new_arbitrary(request):
             user
         )
         count = project.import_from_geojson(request.POST['geometry'])
-        request.session.flash(_("Successfully imported ${n} geometries",
-                              mapping={'n': count}),
-                              'success')
+        request.session.flash(
+            ngettext('Successfully imported ${n} geometry',
+                     'Successfully imported ${n} geometries',
+                     count,
+                     mapping={'n': count}),
+            'success')
         return HTTPFound(location=route_path('project_edit', request,
                          project=project.id))
     except Exception, e:
@@ -205,8 +211,8 @@ def project_grid_simulate(request):
     geometry = request.params['geometry']
     tile_size = int(request.params['tile_size'])
 
-    geoms = parse_geojson(geometry)
-    multipolygon = convert_to_multipolygon(geoms)
+    features = parse_geojson(geometry)
+    multipolygon = convert_to_multipolygon(features)
 
     geometry = shape.from_shape(multipolygon, 4326)
 
@@ -282,10 +288,10 @@ def project_edit(request):
         priority_areas = request.params.get('priority_areas', '')
 
         if priority_areas != '':
-            geoms = parse_geojson(priority_areas)
+            features = parse_geojson(priority_areas)
 
-            for geom in geoms:
-                geom = 'SRID=4326;%s' % geom.wkt
+            for feature in features:
+                geom = 'SRID=4326;%s' % feature.geometry.wkt
                 project.priority_areas.append(PriorityArea(geom))
 
         DBSession.add(project)
@@ -497,6 +503,7 @@ def project_preset(request):
              permission='project_edit')
 def project_invalidate_all(request):
     _ = request.translate
+    ngettext = request.plural_translate
 
     # If user has not entered a comment, return error
     if not request.POST.get('comment', None):
@@ -531,8 +538,50 @@ def project_invalidate_all(request):
     if tasks_affected == 0:
         msg = _('No done tasks to invalidate.')
     else:
-        msg = _('%d tasks invalidated' % tasks_affected)
+        msg = ngettext('%d task invalidated',
+                       '%d tasks invalidated',
+                       tasks_affected) % tasks_affected
     DBSession.flush()
+    return dict(success=True, msg=msg)
+
+
+@view_config(route_name='project_message_all', renderer='json',
+             permission='project_edit')
+def project_message_all(request):
+    _ = request.translate
+    ngettext = request.plural_translate
+
+    if not request.POST.get('message', None) or \
+            not request.POST.get('subject', None):
+        return {
+            'error': True,
+            'error_msg': _('A subject and message are required.')
+        }
+
+    id = request.matchdict['project']
+    project = DBSession.query(Project).get(id)
+    user_id = authenticated_userid(request)
+    user = DBSession.query(User).get(user_id)
+    recipients = get_contributors(project)
+
+    subject = _('Project #') + str(id) + ': ' + request.POST['subject']
+
+    for recipient in recipients:
+        userid = username_to_userid(recipient)
+        to = DBSession.query(User).get(userid)
+        send_message(subject, user, to, request.POST['message'])
+    DBSession.flush()
+
+    num = len(recipients)
+    if num == 0:
+        msg = _('No users to message.')
+    else:
+        msg = ngettext(
+            'Message sent to ${num} user.',
+            'Message sent to ${num} users.',
+            num,
+            mapping={'num': num})
+
     return dict(success=True, msg=msg)
 
 
@@ -572,7 +621,7 @@ def get_contributors(project):
     for user, tasks in itertools.groupby(tasks, key=lambda t: t.username):
         if user not in contributors:
             contributors[user] = {}
-        contributors[user]['done'] = [task[0] for task in tasks]
+        contributors[user]['done'] = list(set([task[0] for task in tasks]))
 
     assigned = DBSession.query(Task.id, User.username) \
         .join(Task.assigned_to) \
@@ -585,7 +634,7 @@ def get_contributors(project):
                                          key=lambda t: t.username):
         if user not in contributors:
             contributors[user] = {}
-        contributors[user]['assigned'] = [task[0] for task in tasks]
+        contributors[user]['assigned'] = list(set([task[0] for task in tasks]))
 
     return contributors
 

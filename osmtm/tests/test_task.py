@@ -125,6 +125,9 @@ class TestTaskFunctional(BaseTestCase):
 
     def test_task_comment__with_mention(self):
         from osmtm.models import Message, DBSession
+        messages_bef = DBSession.query(Message) \
+                                .filter(Message.to_user_id == self.user2_id) \
+                                .all()
         headers = self.login_as_user1()
         res = self.testapp.get('/project/1/task/3/comment', status=200,
                                headers=headers,
@@ -134,13 +137,63 @@ class TestTaskFunctional(BaseTestCase):
                                xhr=True)
         self.assertTrue(res.json['success'])
 
-        messages = DBSession.query(Message) \
-                            .filter(Message.to_user_id == self.user2_id).all()
-        self.assertEqual(len(messages), 1)
+        messages_aft = DBSession.query(Message) \
+                                .filter(Message.to_user_id == self.user2_id) \
+                                .all()
+        self.assertEqual(len(messages_aft), (len(messages_bef) + 1))
 
         res = self.testapp.get('/project/1/task/3', status=200, xhr=True)
         # confirm that the convert_mention filter is correctly called
         self.assertTrue('<a href="/user/user2">@user2</a>' in res)
+
+    def test_task_invalidation__msg(self):
+        from osmtm.models import Message, DBSession
+
+        user1_before_msgs = DBSession.query(Message) \
+            .filter(Message.to_user_id == self.user1_id).all()
+
+        user2_before_msgs = DBSession.query(Message) \
+            .filter(Message.to_user_id == self.user2_id).all()
+
+        headers = self.login_as_user1()
+        self.testapp.get('/project/1/task/5/lock',
+                         headers=headers,
+                         xhr=True)
+        self.testapp.get('/project/1/task/5/done', status=200,
+                         headers=headers,
+                         xhr=True)
+
+        headers = self.login_as_user2()
+        self.testapp.get('/project/1/task/5/lock',
+                         headers=headers,
+                         xhr=True)
+        self.testapp.get('/project/1/task/5/validate', status=200,
+                         params={
+                             'comment': 'a comment',
+                             'validate': True
+                         },
+                         headers=headers,
+                         xhr=True)
+
+        headers = self.login_as_project_manager()
+        self.testapp.get('/project/1/task/5/lock',
+                         headers=headers,
+                         xhr=True)
+        self.testapp.get('/project/1/task/5/validate', status=200,
+                         params={
+                             'comment': 'a comment',
+                             'invalidate': True
+                         },
+                         headers=headers,
+                         xhr=True)
+
+        user1_after_msgs = DBSession.query(Message) \
+            .filter(Message.to_user_id == self.user1_id).all()
+        user2_after_msgs = DBSession.query(Message) \
+            .filter(Message.to_user_id == self.user2_id).all()
+
+        self.assertEqual(len(user1_after_msgs), (len(user1_before_msgs) + 1))
+        self.assertEqual(len(user2_after_msgs), (len(user2_before_msgs) + 1))
 
     def test_task_invalidate(self):
         headers = self.login_as_user1()

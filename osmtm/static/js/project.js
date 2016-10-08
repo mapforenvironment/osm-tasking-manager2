@@ -405,6 +405,9 @@ osmtm.project = (function() {
         return options.base + '#map=' +
         [zoom, c[1], c[0]].join('/') +
         '&comment=' + changeset_comment;
+        case 'fp':
+        return options.base + '#' +
+        [zoom, c[1], c[0]].join('/');
 
       }
     }
@@ -463,10 +466,10 @@ osmtm.project = (function() {
       break;
       case "fp":
       url = getLink({
-        base: 'http://fieldpapers.org/compose/select?',
+        base: 'http://fieldpapers.org/compose',
         bounds: task_bounds,
         centroid: task_centroid,
-        protocol: 'llz'
+        protocol: 'fp'
       });
       window.open(url);
       break;

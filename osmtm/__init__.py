@@ -89,6 +89,8 @@ def main(global_config, **settings):
     config.add_route('project_users', '/project/{project:\d+}/users')
     config.add_route('project_invalidate_all',
                      '/project/{project:\d+}/invalidate_all')
+    config.add_route('project_message_all',
+                     '/project/{project:\d+}/message_all')
     config.add_route('task_random', '/project/{project:\d+}/random', xhr=True)
     config.add_route('task_empty', '/project/{project:\d+}/task/empty',
                      xhr=True)
@@ -126,6 +128,7 @@ def main(global_config, **settings):
     config.add_route('users', '/users')
     config.add_route('users_json', '/users.json')
     config.add_route('user_messages', '/user/messages')
+    config.add_route('user_messages_check', '/user/messages/check')
     config.add_route('user', '/user/{username}')
     config.add_route('user_admin', '/user/{id:\d+}/admin')
     config.add_route('user_project_manager', '/user/{id:\d+}/project_manager')

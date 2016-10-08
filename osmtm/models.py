@@ -67,6 +67,7 @@ import datetime
 from json import (
     JSONEncoder,
     dumps as _dumps,
+    loads as _loads,
 )
 import functools
 
@@ -275,6 +276,7 @@ class Task(Base):
     geometry = Column(Geometry('MultiPolygon', srid=4326))
     date = Column(DateTime, default=datetime.datetime.utcnow)
     lock_date = Column(DateTime, default=None)
+    extra_properties = Column(Unicode)
 
     assigned_to_id = Column(Integer, ForeignKey('users.id'))
     assigned_to = relationship(User)
@@ -284,6 +286,8 @@ class Task(Base):
     difficulty_medium = 2
     difficulty_hard = 3
     difficulty = Column(Integer)
+
+    parent_id = Column(Integer)
 
     cur_lock = relationship(
         TaskLock,
@@ -337,10 +341,12 @@ class Task(Base):
                       Index('task_lock_date_', date.desc()),
                       {},)
 
-    def __init__(self, x, y, zoom, geometry=None):
+    def __init__(self, x, y, zoom, geometry=None, properties=None):
         self.x = x
         self.y = y
         self.zoom = zoom
+        if properties is not None:
+            self.extra_properties = _dumps(properties)
         if geometry is None:
             geometry = self.to_polygon()
             multipolygon = MultiPolygon([geometry])
@@ -362,6 +368,8 @@ class Task(Base):
             'state': self.cur_state.state if self.cur_state else 0,
             'locked': self.lock_date is not None
         }
+        if self.difficulty:
+            properties['difficulty'] = self.difficulty
         if self.x and self.y and self.zoom:
             properties['x'] = self.x
             properties['y'] = self.y
@@ -371,6 +379,19 @@ class Task(Base):
             id=self.id,
             properties=properties
         )
+
+    def get_extra_instructions(self):
+        instructions = self.project.per_task_instructions
+        properties = {}
+        if self.x:
+            properties['x'] = str(self.x)
+        if self.y:
+            properties['y'] = str(self.y)
+        if self.zoom:
+            properties['z'] = str(self.zoom)
+        if self.extra_properties:
+            properties.update(_loads(self.extra_properties))
+        return instructions.format(**properties)
 
 
 @event.listens_for(Task, "after_update")
@@ -512,13 +533,22 @@ class Project(Base, Translatable):
 
     def import_from_geojson(self, input):
 
-        geoms = parse_geojson(input)
+        features = parse_geojson(input)
 
         tasks = []
-        for geom in geoms:
-            if not isinstance(geom, MultiPolygon):
-                geom = MultiPolygon([geom])
-            tasks.append(Task(None, None, None, 'SRID=4326;%s' % geom.wkt))
+        for feature in features:
+            if not isinstance(feature.geometry, MultiPolygon):
+                feature.geometry = MultiPolygon([feature.geometry])
+
+            properties = feature.properties
+
+            tasks.append(Task(
+                None,
+                None,
+                None,
+                'SRID=4326;%s' % feature.geometry.wkt,
+                properties
+            ))
 
         self.tasks = tasks
 

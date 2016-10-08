@@ -3,7 +3,6 @@
 
 @import "custom.less";
 @import "bootstrap.less";
-@icon-font-path: "../bootstrap/fonts/";
 
 @import "typeahead.less";
 
@@ -72,14 +71,6 @@ h1 {
 }
 .world_map {
     .box-shadow(0, 0, 2px, 2px, rgba(0, 0, 0, 0.15));
-}
-
-.messages sup .badge {
-    font-size: 0.9em;
-    padding: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    .border-radius(4px);
 }
 
 #home {
@@ -587,4 +578,8 @@ h1 {
 .user-admin,
 .user-project-manager {
     text-shadow: 0 0 2px black;
+}
+
+.popover.unread .popover-content {
+  white-space: nowrap;
 }
