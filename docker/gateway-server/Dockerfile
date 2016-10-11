@@ -8,7 +8,7 @@ ENV NGINX_VERSION nginx-1.11.4
 RUN apk add --update \
   python python-dev py-pip \
   gcc musl-dev linux-headers \
-  augeas-dev openssl-dev libffi-dev ca-certificates dialog \
+  augeas-dev openssl openssl-dev libffi-dev ca-certificates dialog \
   pcre-dev zlib-dev wget build-base
 
 RUN mkdir -p /tmp/src && \
