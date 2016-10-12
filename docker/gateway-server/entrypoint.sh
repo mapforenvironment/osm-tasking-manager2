@@ -179,7 +179,7 @@ http {
   }
 }
 EOF
-
+TERM=xterm
 # Initial certificate request, but skip if cached
 if [ ! -f /etc/letsencrypt/live/${DOMAIN}/fullchain.pem ]; then
   letsencrypt certonly \
@@ -202,7 +202,7 @@ cat <<EOF >/etc/periodic/monthly/reissue
 #!/bin/sh
 
 set -euo pipefail
-
+TERM=xterm
 # Certificate reissue
 letsencrypt certonly --renew-by-default \
   --domain "${TASKSDOMAIN}" \
