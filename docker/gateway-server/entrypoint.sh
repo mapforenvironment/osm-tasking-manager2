@@ -186,7 +186,7 @@ if [ ! -f /etc/letsencrypt/live/${DOMAIN}/fullchain.pem ]; then
     --domain ${DOMAIN} \
     --authenticator standalone \
     ${SERVER} \
-    --email "${EMAIL}" --agree-tos
+    --email "${EMAIL}" --agree-tos --text --non-interactive
 fi
 
 if [ ! -f /etc/letsencrypt/live/${TASKSDOMAIN}/fullchain.pem ]; then
@@ -194,7 +194,7 @@ if [ ! -f /etc/letsencrypt/live/${TASKSDOMAIN}/fullchain.pem ]; then
     --domain ${TASKSDOMAIN} \
     --authenticator standalone \
     ${SERVER} \
-    --email "${EMAIL}" --agree-tos
+    --email "${EMAIL}" --agree-tos --text --non-interactive
 fi
 
 # Template a cronjob to reissue the certificate with the webroot authenticator
@@ -208,13 +208,13 @@ letsencrypt certonly --renew-by-default \
   --domain "${TASKSDOMAIN}" \
   --authenticator webroot \
   --webroot-path /etc/letsencrypt/webrootauth/ ${SERVER} \
-  --email "${EMAIL}" --agree-tos
+  --email "${EMAIL}" --agree-tos --text --non-interactive
 
 letsencrypt certonly --renew-by-default \
   --domain "${DOMAIN}" \
   --authenticator webroot \
   --webroot-path /etc/letsencrypt/webrootauth/ ${SERVER} \
-  --email "${EMAIL}" --agree-tos
+  --email "${EMAIL}" --agree-tos --text --non-interactive
 
 # Reload nginx configuration to pick up the reissued certificates
 /usr/sbin/nginx -s reload
